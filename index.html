@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бизнес-План Онлайн - Профессиональный бизнес-план за 15 минут</title>
+    <meta name="description" content="Создайте профессиональный бизнес-план онлайн за 15 минут. Подходит для банков, инвесторов, грантов и соцконтракта. 92% одобрения с первого раза!">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta name="theme-color" content="#4f46e5">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="logo">
+                    <i class="fas fa-chart-line"></i>
+                    <span>БизнесПлан.Онлайн</span>
+                </div>
+                <div class="nav-links">
+                    <a href="#services">Услуги</a>
+                    <a href="#how-it-works">Как это работает</a>
+                    <a href="#pricing">Цены</a>
+                    <a href="#contact-info">Контакты</a>
+                    <a href="#contact">Заказать план</a>
+                </div>
+                <div class="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-star"></i>
+                    <span>92% одобрения с первого раза</span>
+                </div>
+                <h1 class="hero-title">
+                    Создайте профессиональный бизнес-план за 15 минут
+                </h1>
+                <p class="hero-subtitle">
+                    Наш ИИ анализирует ваш регион, рынок и создает уникальный план под ваши требования. 
+                    Подходит для банков, инвесторов, грантов и соцконтракта.
+                </p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-number">1,287+</div>
+                        <div class="stat-label">Успешных планов</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">9/10</div>
+                        <div class="stat-label">Одобрено банками</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">15 мин</div>
+                        <div class="stat-label">Время создания</div>
+                    </div>
+                </div>
+                <div class="hero-cta">
+                    <button class="btn btn-primary btn-large" onclick="scrollToForm()">
+                        <i class="fas fa-rocket"></i>
+                        Создать бизнес-план сейчас
+                    </button>
+                    <button class="btn btn-secondary btn-large" onclick="scrollToSection('how-it-works')">
+                        <i class="fas fa-play"></i>
+                        Как это работает
+                    </button>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-image">
+                    <div class="floating-card card-1">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Одобрен банком</span>
+                    </div>
+                    <div class="floating-card card-2">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>Финансовая модель</span>
+                    </div>
+                    <div class="floating-card card-3">
+                        <i class="fas fa-file-alt"></i>
+                        <span>Готовый документ</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Indicators -->
+    <section class="trust">
+        <div class="container">
+            <div class="trust-grid">
+                <div class="trust-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Безопасная оплата</h3>
+                    <p>Через ЮKassa от Яндекса</p>
+                </div>
+                <div class="trust-item">
+                    <i class="fas fa-clock"></i>
+                    <h3>Мгновенно</h3>
+                    <p>Получите план сразу после оплаты</p>
+                </div>
+                <div class="trust-item">
+                    <i class="fas fa-headset"></i>
+                    <h3>Поддержка 24/7</h3>
+                    <p>Поможем с любыми вопросами</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Для кого подходит наш сервис</h2>
+                <p>Профессиональные бизнес-планы для любых целей и отраслей</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card" data-lazy>
+                    <div class="service-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>ИП, ООО, Самозанятые</h3>
+                    <p>Полноценные планы для налоговой, банков и отчетности. Включают анализ рисков и сроки окупаемости.</p>
+                    <ul>
+                        <li>Финансовые расчеты</li>
+                        <li>Анализ рынка</li>
+                        <li>План развития</li>
+                    </ul>
+                </div>
+                <div class="service-card" data-lazy>
+                    <div class="service-icon">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <h3>Соцконтракт и господдержка</h3>
+                    <p>Специально для тех, кто хочет получить деньги от государства по соцконтракту, субсидиям и грантам.</p>
+                    <ul>
+                        <li>Соответствие требованиям соцконтракта</li>
+                        <li>Подготовка для госпрограмм</li>
+                        <li>Максимальные шансы на одобрение</li>
+                    </ul>
+                </div>
+                <div class="service-card" data-lazy>
+                    <div class="service-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <h3>Банки и кредиты</h3>
+                    <p>Соответствует требованиям Сбербанка, Тинькофф и других банков. Гарантированное одобрение для кредитов и субсидий.</p>
+                    <ul>
+                        <li>Банковские стандарты</li>
+                        <li>Кредитная документация</li>
+                        <li>Финансовое обоснование</li>
+                    </ul>
+                </div>
+                <div class="service-card" data-lazy>
+                    <div class="service-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Студенты и обучение</h3>
+                    <p>Готовые планы для учебных проектов по ГОСТу. Подходит для курсовых, дипломов и защиты стартапов.</p>
+                    <ul>
+                        <li>Структура по ГОСТу</li>
+                        <li>Примеры расчетов</li>
+                        <li>Готовые презентации</li>
+                    </ul>
+                </div>
+                <div class="service-card" data-lazy>
+                    <div class="service-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Стартапы и инвесторы</h3>
+                    <p>Инвест-готовые планы с финансовыми моделями и анализом рынка. Включает презентацию для pitch deck.</p>
+                    <ul>
+                        <li>Инвест-анализ</li>
+                        <li>Pitch deck</li>
+                        <li>ROI расчеты</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2>Как это работает</h2>
+                <p>Всего 3 простых шага до готового бизнес-плана</p>
+            </div>
+            <div class="steps">
+                <div class="step" data-lazy>
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Заполните анкету</h3>
+                        <p>Расскажите о вашей бизнес-идее, регионе и целях. Это займет всего 5-10 минут.</p>
+                    </div>
+                </div>
+                <div class="step" data-lazy>
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>ИИ анализирует данные</h3>
+                        <p>Наш искусственный интеллект изучает рынок, конкурентов и создает уникальный план под ваши требования.</p>
+                    </div>
+                </div>
+                <div class="step" data-lazy>
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Получите готовый план</h3>
+                        <p>Скачайте профессиональный бизнес-план с финансовой моделью в Excel и презентацией.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2>Выберите подходящий пакет</h2>
+                <p>Три варианта для разных потребностей</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card" data-lazy>
+                    <div class="pricing-header">
+                        <h3>Базовый</h3>
+                        <div class="price">
+                            <span class="currency">₽</span>
+                            <span class="amount">2,690</span>
+                        </div>
+                        <p>Для тех, кто знает свою идею</p>
+                    </div>
+                    <div class="pricing-features">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Детальный бизнес-план</li>
+                            <li><i class="fas fa-check"></i> Финансовые расчеты</li>
+                            <li><i class="fas fa-check"></i> Анализ рынка и конкурентов</li>
+                            <li><i class="fas fa-check"></i> План маркетинга</li>
+                            <li><i class="fas fa-check"></i> Анализ рисков</li>
+                            <li><i class="fas fa-check"></i> Рекомендации по подаче</li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-primary btn-full" onclick="selectPlan('basic')">
+                        <i class="fas fa-rocket"></i>
+                        Выбрать базовый
+                    </button>
+                </div>
+                <div class="pricing-card featured" data-lazy>
+                    <div class="pricing-badge">Популярный</div>
+                    <div class="pricing-header">
+                        <h3>Премиум</h3>
+                        <div class="price">
+                            <span class="currency">₽</span>
+                            <span class="amount">3,490</span>
+                        </div>
+                        <p>Для тех, кто хочет получить 3 идеи на выбор</p>
+                    </div>
+                    <div class="pricing-features">
+                        <ul>
+                            <li><i class="fas fa-check"></i> 3 уникальные бизнес-идеи для вашего региона</li>
+                            <li><i class="fas fa-check"></i> 3 детальных бизнес-плана</li>
+                            <li><i class="fas fa-check"></i> Финансовые расчеты для каждой идеи</li>
+                            <li><i class="fas fa-check"></i> Анализ рынка и конкурентов</li>
+                            <li><i class="fas fa-check"></i> План маркетинга</li>
+                            <li><i class="fas fa-check"></i> Анализ рисков</li>
+                            <li><i class="fas fa-check"></i> Сравнительный анализ всех идей</li>
+                            <li><i class="fas fa-check"></i> Презентация проекта для инвесторов</li>
+                            <li><i class="fas fa-check"></i> Рекомендации по подаче</li>
+                            <li><i class="fas fa-check"></i> Приоритетная поддержка 24/7</li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-primary btn-full" onclick="selectPlan('premium')">
+                        <i class="fas fa-crown"></i>
+                        Выбрать премиум
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Stories -->
+    <section class="success-stories">
+        <div class="container">
+            <div class="section-header">
+                <h2>100 историй успеха наших клиентов</h2>
+                <p>Реальные результаты, которые говорят сами за себя</p>
+            </div>
+            <div class="stories-container">
+                <div class="stories-track">
+                    <!-- 100 историй успеха будут добавлены через JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Contact Information -->
+    <section id="contact-info" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Контакты</h2>
+                <p>Свяжитесь с нами любым удобным способом</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Наши контакты</h3>
+                    <p>Мы всегда готовы помочь вам создать профессиональный бизнес-план и ответить на все ваши вопросы.</p>
+                    <div class="contact-features">
+                        <div class="feature">
+                            <i class="fas fa-envelope"></i>
+                            <span>Email: buznesplan@yandex.com</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-phone"></i>
+                            <span>Телефон: +7 (XXX) XXX-XX-XX</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Страна: Россия</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-clock"></i>
+                            <span>Время работы: Пн-Пт 9:00-18:00</span>
+                        </div>
+                    </div>
+                    <div class="contact-cta">
+                        <button class="btn btn-primary btn-large" onclick="scrollToForm()">
+                            <i class="fas fa-rocket"></i>
+                            Заказать бизнес-план
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="form-container">
+                    <h3>Быстрый вопрос</h3>
+                    <p class="form-description">Задайте нам вопрос, и мы ответим в течение 24 часов</p>
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <label for="quickName">
+                                <i class="fas fa-user"></i>
+                                Ваше имя
+                            </label>
+                            <input type="text" id="quickName" name="name" placeholder="Иван Иванов">
+                        </div>
+                        <div class="form-group">
+                            <label for="quickEmail">
+                                <i class="fas fa-envelope"></i>
+                                Email *
+                            </label>
+                            <input type="email" id="quickEmail" name="email" required placeholder="ivan@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="quickMessage">
+                                <i class="fas fa-comment"></i>
+                                Ваш вопрос
+                            </label>
+                            <textarea id="quickMessage" name="message" placeholder="Опишите ваш вопрос или задачу"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <i class="fas fa-paper-plane"></i>
+                            Отправить вопрос
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Form -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Создайте свой бизнес-план прямо сейчас</h2>
+                <p>Заполните форму ниже, и наш ИИ создаст для вас уникальный бизнес-план, учитывая все ваши требования и специфику региона.</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Что вы получите</h3>
+                    <div class="contact-features">
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Уникальный план без шаблонов</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Учет специфики вашего региона</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Готовность к подаче в банк/инвестору</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Финансовые расчеты</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Форма для базового пакета -->
+                <div class="form-container" id="basicForm">
+                    <div class="form-header">
+                        <h3><i class="fas fa-rocket"></i> Базовый пакет (2,690₽)</h3>
+                    </div>
+                    
+                    <form id="basicBusinessPlanForm" class="contact-form">
+                        <div class="form-group">
+                            <label for="basicEmail">
+                                <i class="fas fa-envelope"></i>
+                                Email *
+                            </label>
+                            <input type="email" id="basicEmail" name="email" required 
+                                   placeholder="Введите ваш email адрес">
+                        </div>
+                        <div class="form-group">
+                            <label for="basicFullName">
+                                <i class="fas fa-user"></i>
+                                ФИО
+                            </label>
+                            <input type="text" id="basicFullName" name="fullName" 
+                                   placeholder="Иванов Иван Иванович">
+                        </div>
+                        <div class="form-group">
+                            <label for="basicLocation">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Локация бизнеса *
+                            </label>
+                            <input type="text" id="basicLocation" name="location" required 
+                                   placeholder="Москва, Московская область">
+                        </div>
+                        <div class="form-group">
+                            <label for="basicOwnInvestment">
+                                <i class="fas fa-coins"></i>
+                                Собственные вложения
+                            </label>
+                            <input type="number" id="basicOwnInvestment" name="ownInvestment" 
+                                   placeholder="Сумма, которую готовы вложить">
+                        </div>
+                        <div class="form-group">
+                            <label for="basicAdditionalInfo">
+                                <i class="fas fa-info-circle"></i>
+                                Дополнительная информация
+                            </label>
+                            <textarea id="basicAdditionalInfo" name="additionalInfo" 
+                                      placeholder="Любая дополнительная информация о вашем проекте"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full btn-large">
+                            <i class="fas fa-paper-plane"></i>
+                            Создать бизнес-план (2,690₽)
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Форма для премиум пакета -->
+                <div class="form-container" id="premiumForm">
+                    <div class="form-header">
+                        <h3><i class="fas fa-crown"></i> Премиум пакет (3,490₽)</h3>
+                        <p class="form-description">Для тех, кто хочет получить 3 идеи на выбор</p>
+                    </div>
+
+                    <form id="premiumBusinessPlanForm" class="contact-form">
+                        <div class="form-group">
+                            <label for="premiumEmail">
+                                <i class="fas fa-envelope"></i>
+                                Email *
+                            </label>
+                            <input type="email" id="premiumEmail" name="email" required 
+                                   placeholder="Введите ваш email адрес">
+                        </div>
+                        <div class="form-group">
+                            <label for="premiumFullName">
+                                <i class="fas fa-user"></i>
+                                ФИО
+                            </label>
+                            <input type="text" id="premiumFullName" name="fullName" 
+                                   placeholder="Иванов Иван Иванович">
+                        </div>
+                        <div class="form-group">
+                            <label for="premiumLocation">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Локация бизнеса *
+                            </label>
+                            <input type="text" id="premiumLocation" name="location" required 
+                                   placeholder="Москва, Московская область">
+                        </div>
+                        <div class="form-group">
+                            <label for="premiumRequestedAmount">
+                                <i class="fas fa-hand-holding-usd"></i>
+                                Запрашиваемая сумма
+                            </label>
+                            <input type="number" id="premiumRequestedAmount" name="requestedAmount" 
+                                   placeholder="350000" value="350000">
+                        </div>
+                        <div class="form-group">
+                            <label for="premiumOwnInvestment">
+                                <i class="fas fa-coins"></i>
+                                Собственные вложения
+                            </label>
+                            <input type="number" id="premiumOwnInvestment" name="ownInvestment" 
+                                   placeholder="Сумма, которую готовы вложить">
+                        </div>
+                        <div class="form-group">
+                            <label for="premiumAssetsDescription">
+                                <i class="fas fa-building"></i>
+                                Описание активов
+                            </label>
+                            <textarea id="premiumAssetsDescription" name="assetsDescription" 
+                                      placeholder="Опишите оборудование, недвижимость или другие активы"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="premiumBusinessIdea">
+                                <i class="fas fa-lightbulb"></i>
+                                Опишите вашу бизнес-идею *
+                            </label>
+                            <textarea id="premiumBusinessIdea" name="businessIdea" required 
+                                      placeholder="Подробно опишите, чем планируете заниматься, какие услуги/товары предлагать, кто ваши клиенты"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="premiumCompetitiveAdvantages">
+                                <i class="fas fa-trophy"></i>
+                                Конкурентные преимущества
+                            </label>
+                            <textarea id="premiumCompetitiveAdvantages" name="competitiveAdvantages" 
+                                      placeholder="Что выделяет вас среди конкурентов? Уникальные технологии, местоположение, опыт, команда?"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="premiumImpactDescription">
+                                <i class="fas fa-globe"></i>
+                                Описание влияния на общество
+                            </label>
+                            <textarea id="premiumImpactDescription" name="impactDescription" 
+                                      placeholder="Как ваш бизнес повлияет на общество, экологию, местное сообщество?"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="premiumPurpose">
+                                <i class="fas fa-target"></i>
+                                Назначение бизнес-плана
+                            </label>
+                            <select id="premiumPurpose" name="purpose" required>
+                                <option value="">Выберите назначение</option>
+                                <option value="social_contract">Соцконтракта</option>
+                                <option value="credit">Кредита</option>
+                                <option value="investment">Инвестиции</option>
+                                <option value="subsidy">Субсидии</option>
+                                <option value="grant">Гранта</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="premiumAdditionalInfo">
+                                <i class="fas fa-info-circle"></i>
+                                Дополнительная информация
+                            </label>
+                            <textarea id="premiumAdditionalInfo" name="additionalInfo" 
+                                      placeholder="Любая дополнительная информация о вашем проекте"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full btn-large">
+                            <i class="fas fa-paper-plane"></i>
+                            Создать бизнес-план (3,490₽)
+                        </button>
+                    </form>
+                </div>
+
+                <div class="contact-info">
+                    <h4>Получите 3 уникальные бизнес-идеи</h4>
+                    <p>Наш ИИ проанализирует ваш регион и создаст 3 разные бизнес-идеи, каждая с детальным планом и финансовыми расчетами.</p>
+                    <div class="contact-features">
+                        <div class="feature">
+                            <i class="fas fa-lightbulb"></i>
+                            <span>3 уникальные бизнес-идеи для вашего региона</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Детальные финансовые модели для каждой идеи</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-balance-scale"></i>
+                            <span>Сравнительный анализ всех вариантов</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-presentation"></i>
+                            <span>Готовые презентации для инвесторов</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2>Часто задаваемые вопросы</h2>
+                <p>Ответы на самые популярные вопросы</p>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item" data-lazy>
+                    <div class="faq-question">
+                        <h3>Сколько времени займет создание бизнес-плана?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>После заполнения анкеты наш ИИ создает готовый бизнес-план за 15 минут. Вы получаете его мгновенно после оплаты.</p>
+                    </div>
+                </div>
+                <div class="faq-item" data-lazy>
+                    <div class="faq-question">
+                        <h3>Гарантирует ли сервис одобрение кредита?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Мы гарантируем профессиональное качество и соответствие банковским стандартам. По статистике наших клиентов, 92% получают одобрение с первого раза.</p>
+                    </div>
+                </div>
+                <div class="faq-item" data-lazy>
+                    <div class="faq-question">
+                        <h3>Можно ли получить план на английском языке?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Да! Наш ИИ генерирует профессиональные бизнес-планы на английском языке, соответствующие международным стандартам.</p>
+                    </div>
+                </div>
+                <div class="faq-item" data-lazy>
+                    <div class="faq-question">
+                        <h3>Что входит в финансовую модель?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Финансовая модель включает: прогноз доходов и расходов, расчет точки безубыточности, анализ рентабельности, план движения денежных средств на 3 года.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-chart-line"></i>
+                        <span>БизнесПлан.Онлайн</span>
+                    </div>
+                    <p>Профессиональные бизнес-планы для успешного старта и развития вашего бизнеса.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" aria-label="VKontakte"><i class="fab fa-vk"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Услуги</h4>
+                    <ul>
+                        <li><a href="#services">Бизнес-планы для ИП</a></li>
+                        <li><a href="#services">Планы для банков</a></li>
+                        <li><a href="#services">Планы для студентов</a></li>
+                        <li><a href="#services">Инвест-планы</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Поддержка</h4>
+                    <ul>
+                        <li><a href="#contact-info">Связаться с нами</a></li>
+                        <li><a href="#contact">Заказать план</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="agreement.html">Пользовательское соглашение</a></li>
+                        <li><a href="privacy.html">Политика конфиденциальности</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Контакты</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-envelope"></i> buznesplan@yandex.com</p>
+                        <p><i class="fas fa-phone"></i> +7 (XXX) XXX-XX-XX</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Россия</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 БизнесПлан.Онлайн. Все права защищены. ИНН 540409654918 Казакевич Антон</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Yandex Metrika -->
+    <script type="text/javascript">
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+        
+        ym(103573073, "init", {
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/103573073" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    
+    <script src="script.js"></script>
+</body>
+</html>

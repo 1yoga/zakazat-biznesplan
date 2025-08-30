@@ -1,0 +1,45 @@
+# Git
+.git
+.gitignore
+
+# Documentation
+README.md
+deploy.md
+*.md
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Node modules (not needed for static site)
+node_modules/
+npm-debug.log*
+
+# Docker
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# SSL certificates (will be mounted)
+ssl/
+
+# Backup files
+*.bak
+*.backup
+*.old
+*.orig

@@ -1,0 +1,16 @@
+{
+  "name": "biznesplan-online",
+  "version": "1.0.0",
+  "description": "Профессиональный бизнес-план онлайн за 15 минут",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server . -p $PORT -o",
+    "dev": "npx http-server . -p 8000 -o"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "http-server": "^14.1.1"
+  }
+}
