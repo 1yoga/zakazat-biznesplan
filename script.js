@@ -115,6 +115,7 @@ function initAnimations() {
 function initFormHandling() {
     const basicForm = document.getElementById('basicBusinessPlanForm');
     const premiumForm = document.getElementById('premiumBusinessPlanForm');
+    const quickQuestionForm = document.querySelector('.contact-form');
     
     if (basicForm) {
         basicForm.addEventListener('submit', function(e) {
@@ -127,6 +128,13 @@ function initFormHandling() {
         premiumForm.addEventListener('submit', function(e) {
             e.preventDefault();
             handlePremiumFormSubmission();
+        });
+    }
+    
+    if (quickQuestionForm) {
+        quickQuestionForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            handleQuickQuestionSubmission();
         });
     }
     
@@ -174,7 +182,14 @@ function handleBasicFormSubmission() {
     })
     .then(response => {
         if (!response.ok) {
-            throw new Error('Ошибка сети');
+            // Пытаемся получить детальную информацию об ошибке
+            if (response.status === 400) {
+                throw new Error('Неверные данные формы');
+            } else if (response.status === 500) {
+                throw new Error('Ошибка сервера');
+            } else {
+                throw new Error(`Ошибка ${response.status}: ${response.statusText}`);
+            }
         }
         return response.json();
     })
@@ -184,6 +199,7 @@ function handleBasicFormSubmission() {
         // Проверяем, есть ли URL для подтверждения
         if (result.confirmation_url) {
             // Выполняем редирект на страницу подтверждения
+            console.log('Выполняем редирект на:', result.confirmation_url);
             window.location.href = result.confirmation_url;
         } else {
             // Если URL нет, показываем уведомление об успехе
@@ -193,7 +209,14 @@ function handleBasicFormSubmission() {
     })
     .catch(error => {
         console.error('Ошибка отправки:', error);
-        showNotification('Произошла ошибка при отправке. Попробуйте еще раз или свяжитесь с нами.', 'error');
+        let errorMessage = 'Произошла ошибка при отправке. Попробуйте еще раз или свяжитесь с нами.';
+        
+        // Пытаемся получить более детальную информацию об ошибке
+        if (error.message) {
+            errorMessage = `Ошибка: ${error.message}`;
+        }
+        
+        showNotification(errorMessage, 'error');
     })
     .finally(() => {
         // Восстанавливаем кнопку только если не произошел редирект
@@ -234,6 +257,82 @@ function handlePremiumFormSubmission() {
         yandex_client_id: clientId
     };
     
+            // Отправляем запрос на API
+        fetch('https://app.zakazat-biznesplan.online/create-order', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        })
+        .then(response => {
+            if (!response.ok) {
+                // Пытаемся получить детальную информацию об ошибке
+                if (response.status === 400) {
+                    throw new Error('Неверные данные формы');
+                } else if (response.status === 500) {
+                    throw new Error('Ошибка сервера');
+                } else {
+                    throw new Error(`Ошибка ${response.status}: ${response.statusText}`);
+                }
+            }
+            return response.json();
+        })
+        .then(result => {
+            console.log('Успешно отправлено:', result);
+            
+            // Проверяем, есть ли URL для подтверждения
+            if (result.confirmation_url) {
+                // Выполняем редирект на страницу подтверждения
+                console.log('Выполняем редирект на:', result.confirmation_url);
+                window.location.href = result.confirmation_url;
+            } else {
+                // Если URL нет, показываем уведомление об успехе
+                showNotification('Успешно! Ваша заявка на премиум пакет отправлена. Мы свяжемся с вами в ближайшее время.', 'success');
+                form.reset();
+            }
+        })
+    .catch(error => {
+        console.error('Ошибка отправки:', error);
+        let errorMessage = 'Произошла ошибка при отправке. Попробуйте еще раз или свяжитесь с нами.';
+        
+        // Пытаемся получить более детальную информацию об ошибке
+        if (error.message) {
+            errorMessage = `Ошибка: ${error.message}`;
+        }
+        
+        showNotification(errorMessage, 'error');
+    })
+    .finally(() => {
+        // Восстанавливаем кнопку только если не произошел редирект
+        if (!window.location.href.includes('confirmation')) {
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+        }
+    });
+}
+
+// Handle quick question form submission
+function handleQuickQuestionSubmission() {
+    const form = document.querySelector('.contact-form');
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalText = submitBtn.innerHTML;
+    
+    // Показываем состояние загрузки
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Отправка...';
+    submitBtn.disabled = true;
+    
+    // Собираем данные формы
+    const formData = new FormData(form);
+    const data = {
+        name: formData.get('name'),
+        email: formData.get('email'),
+        message: formData.get('message'),
+        source_url: window.location.href,
+        form: 'quick_question',
+        yandex_client_id: clientId
+    };
+    
     // Отправляем запрос на API
     fetch('https://app.zakazat-biznesplan.online/create-order', {
         method: 'POST',
@@ -244,33 +343,37 @@ function handlePremiumFormSubmission() {
     })
     .then(response => {
         if (!response.ok) {
-            throw new Error('Ошибка сети');
+            // Пытаемся получить детальную информацию об ошибке
+            if (response.status === 400) {
+                throw new Error('Неверные данные формы');
+            } else if (response.status === 500) {
+                throw new Error('Ошибка сервера');
+            } else {
+                throw new Error(`Ошибка ${response.status}: ${response.statusText}`);
+            }
         }
         return response.json();
     })
     .then(result => {
-        console.log('Успешно отправлено:', result);
-        
-        // Проверяем, есть ли URL для подтверждения
-        if (result.confirmation_url) {
-            // Выполняем редирект на страницу подтверждения
-            window.location.href = result.confirmation_url;
-        } else {
-            // Если URL нет, показываем уведомление об успехе
-            showNotification('Успешно! Ваша заявка на премиум пакет отправлена. Мы свяжемся с вами в ближайшее время.', 'error');
-            form.reset();
-        }
+        console.log('Вопрос отправлен:', result);
+        showNotification('Спасибо! Ваш вопрос отправлен. Мы ответим в течение 24 часов.', 'success');
+        form.reset();
     })
     .catch(error => {
         console.error('Ошибка отправки:', error);
-        showNotification('Произошла ошибка при отправке. Попробуйте еще раз или свяжитесь с нами.', 'error');
+        let errorMessage = 'Произошла ошибка при отправке. Попробуйте еще раз или свяжитесь с нами.';
+        
+        // Пытаемся получить более детальную информацию об ошибке
+        if (error.message) {
+            errorMessage = `Ошибка: ${error.message}`;
+        }
+        
+        showNotification(errorMessage, 'error');
     })
     .finally(() => {
-        // Восстанавливаем кнопку только если не произошел редирект
-        if (!window.location.href.includes('confirmation')) {
-            submitBtn.innerHTML = originalText;
-            submitBtn.disabled = false;
-        }
+        // Восстанавливаем кнопку
+        submitBtn.innerHTML = originalText;
+        submitBtn.disabled = false;
     });
 }
 
