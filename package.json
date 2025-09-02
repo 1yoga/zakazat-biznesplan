@@ -5,7 +5,7 @@
   "main": "index.html",
   "scripts": {
     "start": "npx http-server . -p $PORT -o",
-    "dev": "npx http-server . -p 8000 -o"
+    "dev": "npx http-server . -p 3000 -o --host localhost"
   },
   "engines": {
     "node": ">=18.0.0"
