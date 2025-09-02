@@ -167,7 +167,7 @@ function handleBasicFormSubmission() {
         ownInvestment: formData.get('ownInvestment'),
         additionalInfo: formData.get('additionalInfo'),
         source_url: window.location.href,
-        form: 'general_without_idea',
+        form: 'general_no_idea',
         price: '2690',
         yandex_client_id: clientId
     };
